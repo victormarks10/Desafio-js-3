@@ -3,7 +3,7 @@
 // O final da leitura de dados se dará com a entrada de um salário negativo. - Faça isso usando uma função!
 
 
-const people = [
+const people =[
     {
         numberOfChildren: 2,
         salary: 2000
@@ -32,9 +32,8 @@ const people = [
         numberOfChildren: 0,
         salary: -400
     },
-
-
 ]
+
 function findAverageAndHighestSalary(peopleInformation) {
 
 
@@ -42,30 +41,36 @@ function findAverageAndHighestSalary(peopleInformation) {
     let averageChildren = 0 // media de filhos
     let highestSalary = 0 // maior salario
 
-
-    for (let i = 0; i < peopleInformation.lenght; i++) { // somar o i a cada passada
+// somar o i a cada passada
+    for (let i = 0; i < peopleInformation.length; i++) { 
 
         const salary = peopleInformation[i].salary
         const children = peopleInformation[i].numberOfChildren
         
-        console.log(salary/peopleInformation.lenght)
-        console.log(children/peopleInformation.lenght)
+        console.log(salary/peopleInformation.length)
+        console.log(children/peopleInformation.length)
 
         if (salary > highestSalary) highestSalary = salary
 
         if(salary<0) {
-            console.log(`Média de salário R$${(averageSalary/i+1).toFixed}`)
-            console.log( `Média dos filhos R$${(averageSalary/i+1).toFixed}`)
+            console.log(`Média de salário R$${(averageSalary/i+1).toFixed(0)}`)
+            console.log( `Média dos filhos ${(averageChildren/i+1).toFixed(0)}`)
             console.log( `Maior salario R$${highestSalary}`) }
             else{
                 averageSalary = averageSalary+salary;
                 averageChildren +=children
             
             }
-        
 
+         
     }
-    findAverageAndHighestSalary()
+
+    console.log(averageSalary /peopleInformation.length)
+    console.log(averageChildren /peopleInformation.length)
+    console.log(highestSalary/peopleInformation.length)
+    
+  
 }
+findAverageAndHighestSalary(people)
 
 
